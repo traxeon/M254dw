@@ -69,18 +69,6 @@ The M254dw has a built-in web interface accessible at the printer's IP address (
 
 ---
 
-## Maintenance Log
-
-Track servicing events in `maintenance/log.md`:
-
-| Date | Event | Notes |
-|---|---|---|
-| YYYY-MM-DD | Toner replaced (Black) | |
-| YYYY-MM-DD | Firmware updated | Version X → Version Y |
-| YYYY-MM-DD | Paper jam cleared | Tray 2 |
-
----
-
 ## Useful Links
 
 - [HP M254dw Product Page](https://www.hp.com/us-en/shop/pdp/hp-color-laserjet-pro-m254dw)
