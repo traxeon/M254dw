@@ -1,92 +1,35 @@
-# HP Color LaserJet Pro M254dw — Configuration Reference
+# HP Color LaserJet Pro M254dw — Firmware & Cheap Toner Guide
 
-A central repository for storing and tracking configuration settings, network details, driver info, and maintenance notes for the HP Color LaserJet Pro M254dw.
+This repository exists to preserve a known-good **pre-DRM firmware** for the **HP Color LaserJet Pro M254dw** and document how to install it so the printer continues to accept **third-party toner**.
 
----
+HP introduced a "Dynamic Security" lockout for non-HP cartridges via a firmware update around **October 2020**. Firmware **20200612** (June 2020) is the last version prior to that lockout (see `firmware_downgrade.md`).
 
-## Printer Overview
+## What’s in this repo
 
-| Field | Details |
-|---|---|
-| **Model** | HP Color LaserJet Pro M254dw |
-| **Part Number** | T6B60A |
-| **Type** | Color Laser |
-| **Connectivity** | USB, Ethernet, Wi-Fi, Wi-Fi Direct |
-| **Duplex** | Automatic (two-sided printing) |
+- `HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu` — the firmware image (~33.6 MB)
+- `HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu.sha256` — checksum for integrity verification
+- `firmware_downgrade.md` — step-by-step downgrade/install instructions (Linux/CUPS + `lpr`)
 
----
+## Quick start
 
-## Repository Contents
+1. Verify the firmware file:
 
-```
-/
-├── README.md                   # This file
-├── network/
-│   └── network-settings.md     # IP address, Wi-Fi, DNS config
-├── drivers/
-│   └── drivers.md              # Driver versions and download links
-├── print-settings/
-│   └── defaults.md             # Default paper, quality, duplex settings
-├── maintenance/
-│   └── log.md                  # Toner replacements, resets, repairs
-└── embedded-web-server/
-    └── ews-settings.md         # HP EWS (browser-based admin) notes
-```
+   ```bash
+   shasum -a 256 HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu
+   ```
 
----
+   Compare against the value in `HP_Color_LaserJet_Pro_M254_dw_Printer_series_20200612.rfu.sha256`.
 
-## Driver & Firmware
+2. Follow the full install/downgrade guide:
 
-Document in `drivers/drivers.md`:
+   - See `firmware_downgrade.md`
 
-- Current installed driver version (per OS)
-- Firmware version on the device
-- Links to HP's official support page: [HP M254dw Support](https://support.hp.com/us-en/product/hp-color-laserjet-pro-m254dw/15096270)
-- Notes on any known driver issues or workarounds
+3. After the downgrade, **disable automatic updates** on the printer to prevent HP from re-installing the newer firmware.
 
----
+## Safety / responsibility
 
-## Default Print Settings
+Firmware flashing always carries risk (power loss, wrong model, etc.). Use at your own risk. This repo is provided for documentation and archival purposes.
 
-Document in `print-settings/defaults.md`:
+## License / trademarks
 
-- Paper size (e.g., A4 / Letter)
-- Print quality (Draft / Normal / Best)
-- Color vs. Grayscale default
-- Duplex on/off
-- Tray assignments
-
----
-
-## Embedded Web Server (EWS)
-
-The M254dw has a built-in web interface accessible at the printer's IP address (e.g., `http://192.168.1.x`). Document any custom EWS settings in `embedded-web-server/ews-settings.md`, such as:
-
-- Admin password (store securely — do not commit here)
-- Energy save / sleep settings
-- Security settings (SNMPv1/v2/v3, SSL)
-- Email / scan-to-email configuration
-
----
-
-## Useful Links
-
-- [HP M254dw Product Page](https://www.hp.com/us-en/shop/pdp/hp-color-laserjet-pro-m254dw)
-- [HP Support & Drivers](https://support.hp.com/us-en/product/hp-color-laserjet-pro-m254dw/15096270)
-- [HP EWS Documentation](https://support.hp.com/us-en/document/c04706744)
-- [HP Smart App](https://www.hp.com/us-en/shop/cv/hpsmart)
-
----
-
-## Contributing
-
-To update configuration details:
-1. Edit the relevant file in the appropriate subfolder.
-2. Add a brief commit message describing what changed (e.g., `Update static IP address`).
-3. For major changes (firmware updates, network reconfigs), add an entry to `maintenance/log.md`.
-
----
-
-## License
-
-This repository contains configuration reference information only. No warranty is implied. HP trademarks and product names belong to HP Inc.
+No warranty is implied. HP trademarks and product names belong to HP Inc.
