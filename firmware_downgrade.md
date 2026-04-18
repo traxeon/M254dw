@@ -145,4 +145,3 @@ lpr -P HP_Color_LaserJet_M254DW_0 HP_Color_LaserJet_Pro_M254_dw_Printer_series_2
 - If you ever factory reset the printer, re-disable automatic updates as a reset may turn them back on.
 - Third-party toner quality is effectively identical to OEM for everyday printing.
 
-Original write-up: [mattwebb.io](https://mattwebb.io/2025/10/27/installing-hp-M254DW-printer-firmware-to-use-cheap-toners.html)
