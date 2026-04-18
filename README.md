@@ -35,23 +35,6 @@ A central repository for storing and tracking configuration settings, network de
 
 ---
 
-## Network Configuration
-
-Document current network settings in `network/network-settings.md`. Suggested fields:
-
-- **IP Address** (static or DHCP-assigned)
-- **Subnet Mask**
-- **Default Gateway**
-- **DNS Servers**
-- **Hostname**
-- **Wi-Fi SSID**
-- **Wi-Fi Direct Name / Password**
-- **802.1X / WPA settings** (if applicable)
-
-> ⚠️ Do not commit passwords or WPA keys in plaintext. Use a secrets manager or environment variables and reference them here instead.
-
----
-
 ## Driver & Firmware
 
 Document in `drivers/drivers.md`:
